@@ -37,7 +37,6 @@ import {
   getVerboseChartInterval,
   nowUnixMilis,
 } from "_utils/chart"
-import {log} from "_utils/logging"
 import {Money, formatCurrency} from "_utils/money"
 import {roundToTwo} from "_utils/numeric"
 
@@ -65,11 +64,6 @@ const CoinScreen: React.FC = () => {
     (coinQuery.isLoading || coinHistoryQuery.isLoading) &&
     (coinQuery.data === undefined || coinHistoryQuery.data === undefined)
   const chartIntervalText = `${t("coin.chartInterval")}: ${chartInterval}`
-
-  React.useEffect(() => {
-    log("Coin data", coinQuery.data)
-    log("Coin History", coinHistoryQuery.data)
-  }, [coinHistoryQuery.data, coinQuery.data])
 
   if (isScreenLoading) {
     return <Loading size="large" />
