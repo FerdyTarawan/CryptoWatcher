@@ -18,8 +18,8 @@ Made using React-Native and Typescript with addition of these awesome libraries:
 PS: Currently the development is focused on Android platform so it might require additional setup to run on IOS
 
 # Preview
-<img src="../publish/market-screen.jpg" alt="Market Screen" height="400" />
-<img src="../publish/news-list-screen.jpg" alt="News List Screen" height="400" />
-<img src="../publish/news-screen.jpg" alt="News Screen" height="400" />
-<img src="../publish/fng-screen.jpg" alt="Fear And Greed Index Screen" height="400" />
+<img src="/publish/market-screen.jpg" alt="Market Screen" height="400" />
+<img src="/publish/news-list-screen.jpg" alt="News List Screen" height="400" />
+<img src="/publish/news-screen.jpg" alt="News Screen" height="400" />
+<img src="/publish/fng-screen.jpg" alt="Fear And Greed Index Screen" height="400" />
 
