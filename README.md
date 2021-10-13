@@ -17,6 +17,12 @@ Made using React-Native and Typescript with addition of these awesome libraries:
 
 PS: Currently the development is focused on Android platform so it might require additional setup to run on IOS
 
+# API
+This app uses API provided by:
+- [Live Coin Watch](https://www.livecoinwatch.com/)
+- [CryptoPanic](https://cryptopanic.com/)
+- [Alternative.me](https://alternative.me/)
+
 # Preview
 <img src="/publish/market-screen.jpg" alt="Market Screen" height="400" />
 <img src="/publish/coin-details.jpg" alt="Coin Detail Screen" height="400" />
