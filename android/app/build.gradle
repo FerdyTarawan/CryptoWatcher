@@ -152,6 +152,12 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            storeFile file('cryptowatcher.keystore')
+            storePassword 'cryptowatcher'
+            keyAlias 'cryptowatcher'
+            keyPassword 'cryptowatcher'
+        }
     }
     buildTypes {
         debug {
