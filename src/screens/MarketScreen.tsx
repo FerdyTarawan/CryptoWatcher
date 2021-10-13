@@ -6,13 +6,12 @@ import React, {
   useState,
 } from "react"
 import {useTranslation} from "react-i18next"
-import {FlatList, Pressable} from "react-native"
+import {FlatList} from "react-native"
 import type {SelectRef} from "react-native-magnus"
 import {Box, Button, Icon, Image, Select, Text} from "react-native-magnus"
 import {getStatusBarHeight} from "react-native-status-bar-height"
 
 import Card from "_components/Card"
-import Container from "_components/Container"
 import Loading from "_components/Loading"
 import {CURRENCY_PAIRS} from "_constants/currency"
 import useCurrency from "_hooks/useCurrencyStore"
@@ -20,7 +19,6 @@ import useMarketCoins, {
   defaultCoinListRequestParams,
 } from "_hooks/useMarketCoins"
 import useMarketOverview from "_hooks/useMarketOverview"
-import {log} from "_utils/logging"
 
 const MarketScreen: React.FC = () => {
   const {t} = useTranslation()
@@ -78,10 +76,6 @@ const MarketScreen: React.FC = () => {
       currency,
     })
   }, [currency])
-
-  useEffect(() => {
-    log(coinsQuery.data)
-  }, [coinsQuery.data])
 
   const screenHeader = useMemo<React.ReactElement>(
     () => (
