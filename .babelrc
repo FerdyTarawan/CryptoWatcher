@@ -1,0 +1,25 @@
+{
+    "plugins": [
+      "@babel/plugin-proposal-numeric-separator",
+      ["@babel/plugin-proposal-decorators", { "legacy": true }],
+      [
+        "module-resolver",
+        {
+          "cwd": "babelrc",
+          "root": ["./src"],
+          "extensions": [".js", ".jsx", ".ts", ".tsx"],
+          "alias": {
+            "_tests": "./__tests__",
+            "_atoms": "./src/assets",
+            "_components": "./src/components",
+            "_constants": "./src/constants",
+            "_hooks": "./src/hooks",
+            "_locales": "./src/locales",
+            "_routes": "./src/routes",
+            "_screens": "./src/screens",
+            "_utils": "./src/utils"
+          }
+        }
+      ]
+    ]
+}

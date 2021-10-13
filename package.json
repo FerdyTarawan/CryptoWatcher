@@ -1,0 +1,97 @@
+{
+  "name": "cryptowatcher",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "yarn reactotron-connect && react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "reactotron-connect": "adb reverse tcp:9090 tcp:9090"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.15.9",
+    "@react-native-community/netinfo": "^6.0.2",
+    "@react-navigation/bottom-tabs": "^6.0.7",
+    "@react-navigation/native": "^6.0.4",
+    "@react-navigation/native-stack": "^6.2.2",
+    "apisauce": "^2.1.2",
+    "color": "^4.0.1",
+    "date-fns": "^2.25.0",
+    "deepmerge": "^4.2.2",
+    "i18next": "^21.2.4",
+    "react": "17.0.2",
+    "react-i18next": "^11.12.0",
+    "react-native": "0.66.0",
+    "react-native-animatable": "^1.3.3",
+    "react-native-config": "^1.4.4",
+    "react-native-magnus": "^1.0.62",
+    "react-native-modal": "^13.0.0",
+    "react-native-safe-area-context": "^3.3.2",
+    "react-native-screens": "^3.8.0",
+    "react-native-speedometer": "^1.0.5",
+    "react-native-status-bar-height": "^2.6.0",
+    "react-native-svg": "^12.1.1",
+    "react-native-vector-icons": "^8.1.0",
+    "react-native-webview": "^11.14.0",
+    "react-query": "^3.25.1",
+    "ts-money": "^0.4.6",
+    "validate-color": "^2.1.1",
+    "victory-native": "^35.5.5",
+    "zustand": "^3.5.13"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-proposal-decorators": "^7.15.8",
+    "@babel/plugin-proposal-numeric-separator": "^7.14.5",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@types/jest": "^26.0.23",
+    "@types/react-native": "^0.65.0",
+    "@types/react-test-renderer": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "babel-jest": "^26.6.3",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-sort-destructure-keys": "^1.3.5",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "eslint-plugin-typescript-sort-keys": "^1.8.0",
+    "husky": "^7.0.2",
+    "jest": "^26.6.3",
+    "lint-staged": "^11.2.0",
+    "metro-react-native-babel-preset": "^0.66.2",
+    "prettier": "^2.4.1",
+    "prettier-eslint": "^13.0.0",
+    "prettier-eslint-cli": "^5.0.1",
+    "react-test-renderer": "17.0.2",
+    "reactotron-react-native": "^5.0.0",
+    "typescript": "^3.8.3"
+  },
+  "resolutions": {
+    "@types/react": "^17"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,html}": [
+      "prettier-eslint --write"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+    "common": {
+        "next": "Next",
+        "prev": "Previous"
+    },
+    "market": {
+        "overview": {
+            "btcDom": "BTC Dominance",
+            "cap": "Market Cap",
+            "liquidity": "Liquidity",
+            "title": "Market Overview",
+            "volume": "Volume"
+        },
+        "listing": {
+            "selectCurrency": "Choose currency",
+            "title": "Coins"
+        }
+    },
+    "index": {
+        "faq": {
+            "answer_1": "Each day, we analyze emotions and sentiments from different sources and crunch them into one simple number: The Fear & Greed Index for Bitcoin and other large cryptocurrencies.",
+            "answer_2": "The crypto market behaviour is very emotional. People tend to get greedy when the market is rising which results in FOMO (Fear of missing out). Also, people often sell their coins in irrational reaction of seeing red numbers. With our Fear and Greed Index, we try to save you from your own emotional overreactions. There are two simple assumptions: \n\n 1.) Extreme fear can be a sign that investors are too worried. That could be a buying opportunity.\n 2.) When Investors are getting too greedy, that means the market is due for a correction.\n\nTherefore, we analyze the current sentiment of the Bitcoin market and crunch the numbers into a simple meter from 0 to 100. Zero means \"Extreme Fear\", while 100 means \"Extreme Greed\".",
+            "question_1": "What is Crypto Fear & Greed Index?",
+            "question_2": "Why Measure Fear and Greed?"
+        },
+        "lastUpdatedAt": "Last updated at",
+        "title": "Fear And Greed Index"
+    },
+    "news": {
+        "title": "Latest News",
+        "detailTitle": "News"
+    }
+}
