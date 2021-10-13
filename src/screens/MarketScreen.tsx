@@ -1,3 +1,5 @@
+import {useNavigation} from "@react-navigation/core"
+import type {NativeStackNavigationProp} from "@react-navigation/native-stack"
 import React, {
   createRef,
   useCallback,
@@ -19,9 +21,13 @@ import useMarketCoins, {
   defaultCoinListRequestParams,
 } from "_hooks/useMarketCoins"
 import useMarketOverview from "_hooks/useMarketOverview"
+import type {AppStackParamList} from "_routes/AppRoutes"
+import {roundToTwo} from "_utils/numeric"
 
 const MarketScreen: React.FC = () => {
   const {t} = useTranslation()
+  const {navigate} =
+    useNavigation<NativeStackNavigationProp<AppStackParamList, "Home">>()
   const {changeCurrency, currency} = useCurrency()
   const overviewQuery = useMarketOverview(currency)
   const [coinsRequestParam, setCoinsRequestParam] = useState({
@@ -42,32 +48,20 @@ const MarketScreen: React.FC = () => {
 
   const nextCoinList = useCallback(
     (): void =>
-      void setCoinsRequestParam({
-        ...defaultCoinListRequestParams,
-        currency,
-        offset: coinsRequestParam.offset + coinsRequestParam.limit,
-      }),
-    [
-      coinsRequestParam.limit,
-      coinsRequestParam.offset,
-      currency,
-      setCoinsRequestParam,
-    ],
+      void setCoinsRequestParam(prevState => ({
+        ...prevState,
+        offset: prevState.offset + prevState.limit,
+      })),
+    [setCoinsRequestParam],
   )
 
   const prevCoinList = useCallback(
     (): void =>
-      void setCoinsRequestParam({
-        ...defaultCoinListRequestParams,
-        currency,
-        offset: coinsRequestParam.offset - coinsRequestParam.limit,
-      }),
-    [
-      coinsRequestParam.limit,
-      coinsRequestParam.offset,
-      currency,
-      setCoinsRequestParam,
-    ],
+      void setCoinsRequestParam(prevState => ({
+        ...prevState,
+        offset: prevState.offset - prevState.limit,
+      })),
+    [setCoinsRequestParam],
   )
 
   useEffect(() => {
@@ -186,7 +180,7 @@ const MarketScreen: React.FC = () => {
         data={coinsQuery.data}
         keyExtractor={(item): string => item.code}
         renderItem={({item}): React.ReactElement => (
-          <Card onPress={(): void => {}}>
+          <Card onPress={(): void => void navigate("Coin", {code: item.code})}>
             <Box flexDir="row" justifyContent="space-between" mt="md">
               <Box flexDir="row">
                 <Image

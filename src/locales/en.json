@@ -3,13 +3,24 @@
         "next": "Next",
         "prev": "Previous"
     },
+    "coin": {
+        "allTimeHighUSD": "All time high (USD)",
+        "cap": "Market Cap",
+        "chartInterval": "Chart period",
+        "circulatingSupply": "Circulating Supply",
+        "maxSupply": "Max Supply",
+        "selectChartInterval": "Select chart period",
+        "statistics": "Statistics",
+        "totalSupply": "Total Supply",
+        "volume": "Volume"
+    },
     "market": {
         "overview": {
             "btcDom": "BTC Dominance",
-            "cap": "Market Cap",
-            "liquidity": "Liquidity",
+            "cap": "Total Market Cap",
+            "liquidity": "Total Liquidity",
             "title": "Market Overview",
-            "volume": "Volume"
+            "volume": "Total Volume"
         },
         "listing": {
             "selectCurrency": "Choose currency",

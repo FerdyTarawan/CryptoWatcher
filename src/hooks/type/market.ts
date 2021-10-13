@@ -1,4 +1,5 @@
 import type {CurrencyPairs} from "_constants/currency"
+import type {CoinResponse} from "_hooks/type/coin"
 
 export interface MarketOverviewResponse {
   btcDominance: number
@@ -23,28 +24,9 @@ export interface CoinListRequest {
   sort: string
 }
 
-export interface CoinListResponse {
-  allTimeHighUSD: number
-  cap: number
-  circulatingSupply: number
-  code: string
-  color: string
-  exchanges: number
-  markets: number
-  maxSupply: number
-  name: string
-  pairs: number
-  png32: string
-  png64: string
-  rate: number
-  symbol: string
-  totalSupply: number
-  volume: number
-  webp32: string
-  webp64: string
-}
+export type CoinListResponse = CoinResponse[]
 
-export interface CoinList {
+export interface CoinListData {
   code: string
   name: string
   png64: string

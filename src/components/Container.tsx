@@ -1,18 +1,20 @@
 import React from "react"
 import type {RefreshControlProps} from "react-native"
-import {SafeAreaView, ScrollView, StatusBar, useColorScheme} from "react-native"
-import type {BoxProps} from "react-native-magnus"
-import {Box} from "react-native-magnus"
+import {SafeAreaView, StatusBar, useColorScheme} from "react-native"
+import type {BoxProps, ScrollDivProps} from "react-native-magnus"
+import {Box, ScrollDiv} from "react-native-magnus"
 import {getStatusBarHeight} from "react-native-status-bar-height"
 
 export interface ContainerProps extends BoxProps {
   children?: React.ReactNode
   refreshControl?: React.ReactElement<RefreshControlProps>
+  scrollProps?: ScrollDivProps
 }
 
 const Container: React.FC<ContainerProps> = ({
   children,
   refreshControl,
+  scrollProps,
   ...props
 }) => {
   const isDarkMode = useColorScheme() === "dark"
@@ -24,14 +26,15 @@ const Container: React.FC<ContainerProps> = ({
         backgroundColor="transparent"
         barStyle={isDarkMode ? "light-content" : "dark-content"}
       />
-      <ScrollView
+      <ScrollDiv
         contentContainerStyle={contentContainerStyle}
         contentInsetAdjustmentBehavior="automatic"
-        refreshControl={refreshControl}>
+        refreshControl={refreshControl}
+        {...scrollProps}>
         <Box bg="white" flex={1} pt={getStatusBarHeight()} px="md" {...props}>
           {children}
         </Box>
-      </ScrollView>
+      </ScrollDiv>
     </SafeAreaView>
   )
 }

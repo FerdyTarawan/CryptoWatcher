@@ -7,7 +7,7 @@ import CoinScreen from "_screens/CoinScreen"
 import NewsWebviewScreen from "_screens/NewsWebviewScreen"
 
 export type AppStackParamList = {
-  Coin: undefined
+  Coin: {code: string}
   Home: undefined
   NewsWebview: {sourceUrl: string}
 }

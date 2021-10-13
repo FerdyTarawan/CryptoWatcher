@@ -1,11 +1,12 @@
 import type {RouteProp} from "@react-navigation/core"
-import {useNavigation, useRoute} from "@react-navigation/core"
+import {useRoute} from "@react-navigation/core"
 import React from "react"
 import {useTranslation} from "react-i18next"
 import {StyleSheet} from "react-native"
-import {Box, Button, Header, Icon, Text} from "react-native-magnus"
+import {Box, Header, Text} from "react-native-magnus"
 import {WebView} from "react-native-webview"
 
+import BackButton from "_components/BackButton"
 import type {AppStackParamList} from "_routes/AppRoutes"
 
 const style = StyleSheet.create({
@@ -14,19 +15,11 @@ const style = StyleSheet.create({
 
 const NewsWebviewScreen: React.FC = () => {
   const {t} = useTranslation()
-  const {goBack} = useNavigation()
   const {params} = useRoute<RouteProp<AppStackParamList, "NewsWebview">>()
 
   return (
     <Box>
-      <Header
-        alignment="center"
-        p="md"
-        prefix={
-          <Button bg="transparent" onPress={goBack}>
-            <Icon fontFamily="Feather" fontSize="3xl" name="arrow-left" />
-          </Button>
-        }>
+      <Header alignment="center" p="md" prefix={<BackButton />}>
         <Text fontSize="lg" fontWeight="bold">
           {t("news.detailTitle")}
         </Text>

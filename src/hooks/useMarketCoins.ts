@@ -4,7 +4,7 @@ import {useQuery, useQueryClient} from "react-query"
 
 import {MARKET_LISTING_URL} from "_constants/url"
 import type {
-  CoinList,
+  CoinListData,
   CoinListRequest,
   CoinListResponse,
 } from "_hooks/type/market"
@@ -25,13 +25,10 @@ export const defaultCoinListRequestParams: CoinListRequest = {
 
 const fetchCoinList = async (
   params: CoinListRequest = defaultCoinListRequestParams,
-): Promise<CoinListResponse[]> => {
-  const response = await cryptoApi.post<CoinListResponse[]>(
-    MARKET_LISTING_URL,
-    {
-      ...params,
-    },
-  )
+): Promise<CoinListResponse> => {
+  const response = await cryptoApi.post<CoinListResponse>(MARKET_LISTING_URL, {
+    ...params,
+  })
 
   if (!response.ok) {
     throw new Error(response.problem)
@@ -42,7 +39,7 @@ const fetchCoinList = async (
 
 const transformCoinList =
   (currency: string = defaultCurrency) =>
-  (queryData: CoinListResponse[]): CoinList[] =>
+  (queryData: CoinListResponse): CoinListData[] =>
     queryData.map(coin => ({
       ...coin,
       rate: formatCurrency(
@@ -53,14 +50,14 @@ const transformCoinList =
 
 const useMarketCoins = (
   params: CoinListRequest = defaultCoinListRequestParams,
-): UseQueryResult<CoinList[], unknown> & {
+): UseQueryResult<CoinListData[], unknown> & {
   queryClient: QueryClient
 } => {
   const queryInfo = useQuery(
     ["coins", {...params}],
     async () => await fetchCoinList(params),
     {
-      refetchInterval: secondsToMilliseconds(3),
+      refetchInterval: secondsToMilliseconds(5),
       select: transformCoinList(params.currency),
     },
   )

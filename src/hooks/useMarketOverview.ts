@@ -44,7 +44,7 @@ const useMarketOverview = (
     ["overview", {currency}],
     async () => await fetchMarketOverview(currency),
     {
-      refetchInterval: secondsToMilliseconds(3),
+      refetchInterval: secondsToMilliseconds(5),
       select: transformMarketOverview,
     },
   )
