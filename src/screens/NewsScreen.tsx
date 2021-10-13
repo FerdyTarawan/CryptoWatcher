@@ -2,7 +2,7 @@ import {useNavigation} from "@react-navigation/core"
 import type {NativeStackNavigationProp} from "@react-navigation/native-stack"
 import React, {useCallback, useMemo} from "react"
 import {useTranslation} from "react-i18next"
-import {FlatList, Pressable, RefreshControl} from "react-native"
+import {FlatList, RefreshControl} from "react-native"
 import {Box, Text} from "react-native-magnus"
 import {getStatusBarHeight} from "react-native-status-bar-height"
 

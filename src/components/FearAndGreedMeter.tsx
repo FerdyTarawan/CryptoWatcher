@@ -1,7 +1,6 @@
 import React from "react"
 import {useTranslation} from "react-i18next"
 import {Box, Text} from "react-native-magnus"
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import RNSpeedometer from "react-native-speedometer"
 
